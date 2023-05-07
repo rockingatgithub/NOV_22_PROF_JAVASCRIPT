@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="toggleThemeHandler(event)" id="button" > Dark theme </button>
+
+
+    <div id="div1" >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos blanditiis maxime nam repellat praesentium sed sit quia dolor, molestiae obcaecati tenetur accusantium itaque, eligendi quas quo saepe velit? Atque, harum!
+    </div>
+    
+    <div class="grp1" >
+
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque illum veritatis aut magni voluptatum, explicabo ea voluptas distinctio dolorum eum ducimus nisi porro rem dolorem unde? Assumenda vel asperiores a.
+
+    </div>
+
+    <span class="grp1" >
+        Some text here!
+    </span>
+
+    <h3>
+        Heading !
+    </h3>
+
+    <h3>
+        Heading2 !
+    </h3>
+
+    <input onkeyup="keyPressHandler(event)" type="text" name="username" id="username" />
+    <input type="number" name="score" id="score" />
+
+
+    <script>
+
+        // const buttonEl = document.getElementById('button')
+        // buttonEl.addEventListener('click', () => { console.log(' Button Clicked! ', event)  })
+
+        function toggleThemeHandler (event) {
+
+            console.log("the event", event)
+
+            const bodyBackgroundColor = document.body.style.backgroundColor
+
+            if(bodyBackgroundColor === 'white' || bodyBackgroundColor === '') {
+                document.body.style.backgroundColor = 'grey'
+                document.body.style.color = 'white'
+                event.target.innerText = 'Light Theme'
+            } else {
+                document.body.style.backgroundColor = 'white'
+                document.body.style.color = 'black'
+                event.target.innerText = 'Dark Theme'
+            }
+
+        }
+
+        function keyPressHandler (event) {
+            console.log(event)
+            console.log(event.target, event.target.value)
+
+        }
+
+    </script>
+
+
+</body>
+</html>

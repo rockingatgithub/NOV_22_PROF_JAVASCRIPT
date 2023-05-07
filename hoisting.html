@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        console.log(a)
+        // console.log(b)
+        // console.log(c)
+
+        print()
+
+
+        var a = 90
+        let b = 100
+        const c = 110
+
+        function print () {
+            console.log('function called!')
+            // console.log(a, b, c)
+
+        }
+
+        function func2 () {
+
+            // print()
+            console.log(a) // 90, undefined
+
+            // var a = 40
+            let ac = 45
+            const cd = 34
+
+            console.log(a) // 40
+
+        }
+
+        func2()
+
+        // console.log(ab, ac, cd)
+
+
+        // for (let i = 0; i < [1, 3, 5, 7].length; i++) {
+            
+        //     console.log("inside loop", i)
+            
+        // }
+
+        // console.log(i)
+
+        // block scope
+
+        // if(true) {
+        //     let ab = 'car'
+        // }
+
+        {
+            var ab = 30
+            let cd = 100
+            const dd = 110
+            // console.log(cd)
+        }
+
+        console.log(ab) // error
+        // console.log(cd) // error
+        // console.log(dd) // error
+
+        // funcexp1()  // error
+
+        var funcexp1 = function func123 () { console.log('function added!') }
+        var funcexp2 = function () { console.log('function added!') }
+
+
+
+        function square (num) {
+            return num*num
+        }
+
+        function cubic (num, cb) {
+
+            return cb(num)*num
+
+        } 
+
+        cubic( 4, square)
+
+
+        function outer () {
+
+            var a = 90;
+
+            function nested () {
+                var b = 100
+
+                console.log(a, b)
+            }
+
+            // 1st way
+            // nested()
+
+            return nested
+        }
+
+        outer()()
+
+        let inner = outer()
+        inner()
+        inner()
+        
+
+
+    </script>
+    
+</body>
+</html>
