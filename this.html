@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        'use strict';
+
+        // global scope
+        console.log(this)
+
+        function func1 (a, b) {
+            console.log('func1', this, a, b)
+        }
+
+        let funcexp1 = function named () {
+            console.log('named func exp', this)
+        }
+
+        let funcexp2 = function () {
+            console.log('anonymous func exp',this)
+        }
+
+        let arrfunc = () => console.log('arrow func.', this)
+
+        // func1()
+        // funcexp1()
+        // funcexp2()
+        // arrfunc()
+
+        let studentObj = {
+            name: "CN",
+            roll: 40,
+            getName () {  console.log(this.name)  },
+            // getRoll: () => { console.log('roll func.',this) }
+        }
+
+        studentObj.getName()
+        // studentObj.getRoll()
+
+
+        // binding of functions 
+
+        func1.apply(studentObj, [1, 4])
+        func1.call(studentObj, 1, 4)
+
+        const func1binded = func1.bind(studentObj)
+        func1binded(3, 4)
+        func1binded(5, 6)
+
+
+
+    </script>
+    
+</body>
+</html>

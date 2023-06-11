@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #div1 {
+            height: 300px;
+            width: 300px;
+            background-color: blanchedalmond;
+        }
+
+        #div2 {
+            height: 200px;
+            width: 200px;
+            background-color: rgb(225, 105, 53);
+        }
+
+        #div3 {
+            height: 100px;
+            width: 100px;
+            background-color: rgb(216, 234, 19);
+        }
+
+        table {
+            height: 300px;
+            width: 300px;
+            font-size: 20px;
+        }
+
+        table,
+        td {
+
+            border: 1px solid black
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="div1">
+        <div id="div2">
+            <div id="div3">
+
+            </div>
+        </div>
+    </div>
+
+
+    <table onclick="console.log(event.target)">
+
+        <tr>
+            <td>
+                1
+            </td>
+            <td>
+                2
+            </td>
+            <td>
+                3
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                4
+            </td>
+            <td>
+                5
+            </td>
+            <td>
+                6
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                7
+            </td>
+            <td>
+                8
+            </td>
+            <td>
+                9
+            </td>
+        </tr>
+
+    </table>
+
+    <script>
+
+        function printEventData(event) {
+            console.log(event.target, event.currentTarget, event)
+        }
+
+        const div1 = document.getElementById('div1')
+        const div2 = document.getElementById('div2')
+        const div3 = document.getElementById('div3')
+
+        div1.addEventListener('click', printEventData, { capture: true })
+        div2.addEventListener('click', printEventData, { capture: true })
+        div3.addEventListener('click', printEventData, { capture: true })
+
+
+    </script>
+
+</body>
+
+</html>

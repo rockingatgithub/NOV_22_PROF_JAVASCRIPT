@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function outer () {
+
+            let a = 10
+            let b = 20
+
+            function inner () {
+                
+                let c = 30
+                let d = 40
+
+                a++;
+                b++;
+                console.log(a, b, c, d)
+
+            }
+
+            // inner()
+            return inner
+        }
+
+        let nestedFunction = outer()
+        nestedFunction() // 11, 21, 30, 40
+        nestedFunction()
+
+        let nestedFunction1 = outer()
+        nestedFunction1() // 11, 21, 30, 40
+        nestedFunction1()
+        nestedFunction1()  // 13, 23, 30, 40
+
+
+
+    </script>
+    
+</body>
+</html>

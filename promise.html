@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // const promise = new Promise( (resolve, reject) => {
+
+        //     setTimeout(() => {  
+
+        //         // resolve("Timeout over!")
+        //         reject(new Error("Error in promise!"))
+            
+        //     }, 4000 )
+
+        // })
+
+        // promise
+        // .then( (value) => { console.log(value) })
+        // .catch((error) => { console.log(error) })
+        // .then( () => console.log("Second console") )
+        // .then(() => console.log("Third"))
+        // .then(() => {console.log("Fourth")})
+
+
+        function delayedAddition (a, b, time) {
+
+            let promise = new Promise(
+                ( resolve, reject ) => {
+
+                    setTimeout (() => {
+
+                        resolve(a+b)
+
+                    }, time)
+
+                }
+            )
+
+            return promise
+
+        }
+
+        delayedAddition(4, 6, 4000)
+        .then((result) => console.log(result))
+
+
+    </script>
+    
+</body>
+</html>

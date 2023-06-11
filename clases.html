@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class Car {
+
+            constructor (name, color) {
+                this.name = name
+                this.color = color
+            }
+
+            getName () {
+                console.log(this.name)
+            } 
+
+        }
+
+        const BMW = class extends Car {
+
+            constructor (name, color, maxSpeed) {
+                super(name, color)
+                this.maxSpeed = maxSpeed
+            }
+
+            getMaxSpeed () {
+                console.log(this.maxSpeed)
+            }
+
+        }
+
+        const car1 = new Car('BMW', 'blue')
+        // const car2 = new Car('Audi', 'red')
+
+        const car3 = new BMW('BMW', 'blue', 500)
+
+
+    </script>
+    
+</body>
+</html>

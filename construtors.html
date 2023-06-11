@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        'use strict';
+
+        function Student (name, roll) {
+
+            let obj = {
+                name: name,
+                roll: roll,
+                getName () { console.log(this.name)  }
+            }
+
+            return obj;
+        }
+
+        let student1 = Student('Stu1', 10)
+        let student2 = Student('Stu2', 20)
+
+        function Student2 (name, roll) {
+
+            this.name = name
+            this.roll =roll
+            this.getRoll = function () { console.log(this.roll) }
+
+        }
+
+        Student2.prototype.getName = function () { console.log(this.name) }
+        Student2.prototype.schoolName = 'DPS'
+
+        let student3 = new Student2('stu3', 30)
+        let student4 = new Student2('stu4', 40)
+
+
+
+    </script>
+    
+</body>
+</html>
